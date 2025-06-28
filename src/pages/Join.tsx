@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Users, Zap, Target, Code, Wrench, Lightbulb, Send, CheckCircle, ArrowRight, Star } from 'lucide-react';
+import { Users, Zap, Target, Code, Wrench, Lightbulb, Send, CheckCircle, ArrowRight, Star, AlertCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Join: React.FC = () => {
@@ -28,9 +28,9 @@ const Join: React.FC = () => {
     portfolio: '',
     interests: []
   });
-  
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const interestAreas = [
     'Environmental Engineering',
@@ -47,47 +47,65 @@ const Join: React.FC = () => {
     'Community Outreach'
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus('idle');
     
-    // Create email with form data
-    const subject = encodeURIComponent('Application to Join The Ingenium Project');
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\n` +
-      `Email: ${formData.email}\n` +
-      `Phone: ${formData.phone}\n` +
-      `Age: ${formData.age}\n` +
-      `Education: ${formData.education}\n` +
-      `Skills: ${formData.skills}\n` +
-      `Experience: ${formData.experience}\n` +
-      `Motivation: ${formData.motivation}\n` +
-      `Availability: ${formData.availability}\n` +
-      `Portfolio/Links: ${formData.portfolio}\n` +
-      `Interest Areas: ${formData.interests.join(', ')}\n`
-    );
-    
-    const mailtoLink = `mailto:theingeniumproject.general@gmail.com?subject=${subject}&body=${body}`;
-    window.location.href = mailtoLink;
-    
-    setTimeout(() => {
-      setIsSubmitting(false);
-      alert('Thank you for your application! We will review it and get back to you soon.');
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        age: '',
-        education: '',
-        skills: '',
-        experience: '',
-        motivation: '',
-        availability: '',
-        portfolio: '',
-        interests: []
+    try {
+      // Create FormData object for Formspree
+      const formDataToSend = new FormData();
+      
+      // Add all form fields
+      formDataToSend.append('name', formData.name);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('phone', formData.phone);
+      formDataToSend.append('age', formData.age);
+      formDataToSend.append('education', formData.education);
+      formDataToSend.append('skills', formData.skills);
+      formDataToSend.append('experience', formData.experience);
+      formDataToSend.append('motivation', formData.motivation);
+      formDataToSend.append('availability', formData.availability);
+      formDataToSend.append('portfolio', formData.portfolio);
+      formDataToSend.append('interests', formData.interests.join(', '));
+      
+      // Add a subject for better email organization
+      formDataToSend.append('_subject', 'New Application to Join The Ingenium Project');
+      
+      // Send to Formspree
+      const response = await fetch('https://formspree.io/f/xeokvvlw', {
+        method: 'POST',
+        body: formDataToSend,
+        headers: {
+          'Accept': 'application/json'
+        }
       });
-    }, 1000);
+      
+      if (response.ok) {
+        setSubmitStatus('success');
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          age: '',
+          education: '',
+          skills: '',
+          experience: '',
+          motivation: '',
+          availability: '',
+          portfolio: '',
+          interests: []
+        });
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -227,6 +245,36 @@ const Join: React.FC = () => {
           </div>
 
           <div className="bg-dark-200 rounded-2xl p-8">
+            {/* Success Message */}
+            {submitStatus === 'success' && (
+              <div className="mb-8 p-4 bg-green-500/10 border border-green-500/20 rounded-lg">
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-6 h-6 text-green-400" />
+                  <div>
+                    <h3 className="text-green-400 font-semibold">Application Submitted Successfully!</h3>
+                    <p className="text-green-300 text-sm mt-1">
+                      Thank you for your application! We'll review it and get back to you soon.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Error Message */}
+            {submitStatus === 'error' && (
+              <div className="mb-8 p-4 bg-red-500/10 border border-red-500/20 rounded-lg">
+                <div className="flex items-center gap-3">
+                  <AlertCircle className="w-6 h-6 text-red-400" />
+                  <div>
+                    <h3 className="text-red-400 font-semibold">Submission Failed</h3>
+                    <p className="text-red-300 text-sm mt-1">
+                      There was an error submitting your application. Please try again or contact us directly.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
+
             <form onSubmit={handleSubmit} className="space-y-8">
               {/* Personal Information */}
               <div>
