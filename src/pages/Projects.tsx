@@ -25,12 +25,12 @@ const Projects: React.FC = () => {
       title: 'Urban Noise Mapping with UAVs',
       description: 'Drone-mounted sensors to map real-time urban noise and inform policy decisions.',
       longDescription: 'Advanced UAV system equipped with precision acoustic sensors to create comprehensive noise pollution maps of urban areas, providing actionable data for city planners and environmental agencies. The system features real-time data transmission, GPS tracking, and automated flight patterns for consistent monitoring.',
-      status: 'completed',
+      status: 'concept',
       icon: <Drone className="w-8 h-8" />,
       tags: ['UAV', 'IoT', 'Environmental', 'Data Analytics'],
-      impact: 'Real-time urban noise monitoring for 10+ city blocks',
+      impact: 'Target: Real-time urban noise monitoring for 10+ city blocks',
       category: 'Environmental',
-      timeline: '6 months',
+      timeline: 'Planning phase',
       technologies: ['Arduino', 'GPS', 'Wireless Communication', 'Data Visualization']
     },
     {
@@ -38,12 +38,12 @@ const Projects: React.FC = () => {
       title: 'Smart AQI Display System',
       description: 'Solar-powered air quality monitors for schools and public spaces with live displays.',
       longDescription: 'Autonomous air quality monitoring stations featuring solar power systems, real-time displays, and wireless connectivity to provide communities with immediate access to air quality information. Each station monitors PM2.5, PM10, CO2, and other key pollutants with 24/7 operation.',
-      status: 'completed',
+      status: 'in-progress',
       icon: <Wind className="w-8 h-8" />,
       tags: ['IoT', 'Solar', 'Public Health', 'Display Systems'],
-      impact: 'Deployed in 5 schools, monitoring air quality for 2000+ students',
+      impact: 'Target: Deploy in 5 schools, monitoring air quality for 2000+ students',
       category: 'Environmental',
-      timeline: '4 months',
+      timeline: '6 months (ongoing)',
       technologies: ['Solar Panels', 'Air Quality Sensors', 'LCD Displays', 'WiFi Modules']
     },
     {
@@ -51,12 +51,12 @@ const Projects: React.FC = () => {
       title: 'TLUD Cookstove Solution',
       description: 'Clean-burning biomass stove that produces biochar instead of harmful smoke.',
       longDescription: 'Top-Lit Up-Draft cookstove design that eliminates stubble burning while producing valuable biochar, addressing both air pollution and agricultural waste management. The design optimizes combustion efficiency while creating a valuable soil amendment product.',
-      status: 'completed',
+      status: 'in-progress',
       icon: <Flame className="w-8 h-8" />,
       tags: ['Biomass', 'Agriculture', 'Clean Energy', 'Sustainability'],
-      impact: 'Reduced smoke emissions by 90%, produces 2kg biochar daily',
+      impact: 'Target: Reduce smoke emissions by 90%, produce 2kg biochar daily',
       category: 'Clean Energy',
-      timeline: '3 months',
+      timeline: '4 months (ongoing)',
       technologies: ['Thermal Engineering', 'Biomass Processing', 'Combustion Optimization']
     },
     {
@@ -64,12 +64,12 @@ const Projects: React.FC = () => {
       title: 'Drone-Assisted Sustainable Farming',
       description: 'Precision pesticide-free farming using advanced UAV technology in Punjab.',
       longDescription: 'Comprehensive drone-based farming system utilizing computer vision and precision agriculture techniques to optimize crop health without harmful pesticides. Features include crop health monitoring, targeted nutrient delivery, and automated pest detection using AI-powered image analysis.',
-      status: 'in-progress',
+      status: 'concept',
       icon: <Sprout className="w-8 h-8" />,
       tags: ['Precision Agriculture', 'Computer Vision', 'Sustainability', 'UAV'],
       impact: 'Target: 100 acres pesticide-free farming coverage',
       category: 'Agriculture',
-      timeline: '8 months (ongoing)',
+      timeline: 'Planning phase',
       technologies: ['Computer Vision', 'Machine Learning', 'Precision Spraying', 'Crop Analytics']
     },
     {
@@ -142,15 +142,15 @@ const Projects: React.FC = () => {
               <div className="text-gray-400 text-sm">Total Projects</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-green-400">3</div>
+              <div className="text-3xl font-bold text-green-400">0</div>
               <div className="text-gray-400 text-sm">Completed</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-yellow-400">1</div>
+              <div className="text-3xl font-bold text-yellow-400">2</div>
               <div className="text-gray-400 text-sm">In Progress</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-blue-400">1</div>
+              <div className="text-3xl font-bold text-blue-400">3</div>
               <div className="text-gray-400 text-sm">Concept Phase</div>
             </div>
           </div>

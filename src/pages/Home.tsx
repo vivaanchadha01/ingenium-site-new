@@ -84,12 +84,12 @@ const Home: React.FC = () => {
             {/* Stats */}
             <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary-500">5+</div>
+                <div className="text-3xl font-bold text-primary-500">5</div>
                 <div className="text-gray-400 text-sm">Active Projects</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary-500">3</div>
-                <div className="text-gray-400 text-sm">Prototypes Built</div>
+                <div className="text-3xl font-bold text-primary-500">2</div>
+                <div className="text-gray-400 text-sm">In Progress</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-primary-500">100%</div>
@@ -141,7 +141,7 @@ const Home: React.FC = () => {
               <p className="text-gray-400 mb-4">
                 Drone-mounted sensors creating real-time noise pollution maps for urban planning.
               </p>
-              <span className="text-green-400 text-sm font-medium">✓ Completed</span>
+              <span className="text-blue-400 text-sm font-medium">⚡ Concept Phase</span>
             </div>
 
             <div className="bg-dark-200 rounded-xl p-6 hover:bg-dark-100 transition-all duration-300 hover:scale-105">
@@ -154,7 +154,7 @@ const Home: React.FC = () => {
               <p className="text-gray-400 mb-4">
                 Solar-powered air quality monitors for schools with live displays.
               </p>
-              <span className="text-green-400 text-sm font-medium">✓ Completed</span>
+              <span className="text-yellow-400 text-sm font-medium">⏳ In Progress</span>
             </div>
 
             <div className="bg-dark-200 rounded-xl p-6 hover:bg-dark-100 transition-all duration-300 hover:scale-105">
@@ -163,9 +163,9 @@ const Home: React.FC = () => {
                   <Zap className="w-6 h-6" />
                 </div>
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">Sustainable Farming</h3>
+              <h3 className="text-xl font-bold text-white mb-3">TLUD Cookstove</h3>
               <p className="text-gray-400 mb-4">
-                Precision pesticide-free farming using advanced UAV technology.
+                Clean-burning biomass stove that produces biochar instead of harmful smoke.
               </p>
               <span className="text-yellow-400 text-sm font-medium">⏳ In Progress</span>
             </div>
