@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import {
-  Mail, Send, User, MessageSquare, Zap, MapPin, Clock
-} from 'lucide-react';
+import emailjs from '@emailjs/browser';
+import { Mail, Zap, MapPin, Clock } from 'lucide-react';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -18,16 +17,20 @@ const Contact: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    const subject = encodeURIComponent(`${formData.subject} - ${formData.collaborationType}`);
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\nCollaboration Type: ${formData.collaborationType}\n\nMessage:\n${formData.message}`
-    );
-    const mailtoLink = `mailto:chadhavivaan007@gmail.com?subject=${subject}&body=${body}`;
-
-    window.location.href = mailtoLink;
-
-    setTimeout(() => {
-      setIsSubmitting(false);
+    emailjs.send(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      {
+        name: formData.name,
+        email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        collaborationType: formData.collaborationType
+      },
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    )
+    .then(() => {
+      alert('Message sent!');
       setFormData({
         name: '',
         email: '',
@@ -35,7 +38,13 @@ const Contact: React.FC = () => {
         message: '',
         collaborationType: 'general'
       });
-    }, 1000);
+      setIsSubmitting(false);
+    })
+    .catch((err) => {
+      console.error('FAILED TO SEND MESSAGE:', err);
+      alert('Failed to send. Please try again.');
+      setIsSubmitting(false);
+    });
   };
 
   const handleChange = (
@@ -49,6 +58,7 @@ const Contact: React.FC = () => {
 
   return (
     <main className="pt-20">
+      {/* Header */}
       <section className="py-20 bg-dark-400">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
@@ -60,8 +70,10 @@ const Contact: React.FC = () => {
         </div>
       </section>
 
+      {/* Contact + Info */}
       <section className="py-20 bg-dark-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {/* Info */}
           <div className="space-y-8">
             <div>
               <h2 className="text-3xl font-bold text-white mb-6">
@@ -105,6 +117,7 @@ const Contact: React.FC = () => {
               </div>
             </div>
 
+            {/* Sidebar Callout */}
             <div className="bg-dark-200 rounded-xl p-6">
               <h3 className="text-white font-semibold mb-4 flex items-center gap-2">
                 <Zap className="w-5 h-5 text-primary-500" /> Looking for:
@@ -119,6 +132,7 @@ const Contact: React.FC = () => {
             </div>
           </div>
 
+          {/* Form */}
           <div className="bg-dark-200 rounded-2xl p-8">
             <h3 className="text-2xl font-bold text-white mb-6">Send a Message</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -144,6 +158,7 @@ const Contact: React.FC = () => {
         </div>
       </section>
 
+      {/* FAQs */}
       <section className="py-20 bg-dark-400">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
