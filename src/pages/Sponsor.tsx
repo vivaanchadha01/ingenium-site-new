@@ -376,13 +376,12 @@ const Sponsor: React.FC = () => {
                 Sponsor Now
                 <ArrowRight className="w-5 h-5" />
               </button>
-              <button
-  onClick={() => navigate('/contact')}
-  className="border border-primary-500 text-primary-500 px-8 py-3 rounded-full font-semibold hover:bg-primary-500/10 transition-all duration-300"
->
-  Contact Us
-</button>
-
+              <a 
+                href="mailto:theingeniumproject.general@gmail.com?subject=Sponsorship Inquiry"
+                className="border border-primary-500 text-primary-500 px-8 py-3 rounded-full font-semibold hover:bg-primary-500/10 transition-all duration-300"
+              >
+                Contact Us
+              </a>
             </div>
           </div>
         </div>

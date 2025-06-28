@@ -497,13 +497,12 @@ const Join: React.FC = () => {
                 Apply Now
                 <ArrowRight className="w-5 h-5" />
               </button>
-              <button
-  onClick={() => navigate('/contact')}
-  className="border border-primary-500 text-primary-500 px-8 py-3 rounded-full font-semibold hover:bg-primary-500/10 transition-all duration-300"
->
-  Ask Questions
-</button>
-
+              <a 
+                href="mailto:theingeniumproject.general@gmail.com?subject=Questions about Joining The Ingenium Project"
+                className="border border-primary-500 text-primary-500 px-8 py-3 rounded-full font-semibold hover:bg-primary-500/10 transition-all duration-300"
+              >
+                Ask Questions
+              </a>
             </div>
           </div>
         </div>
