@@ -39,11 +39,12 @@ const Header: React.FC = () => {
           
           {/* Logo + Title */}
           <Link to="/" className="flex items-center space-x-2">
-            <img 
-              src="/ingenium-logo.png" 
-              alt="Ingenium Logo" 
-              className="h-8 w-8"
-            />
+          <img 
+  src="/ingenium-logo.png" 
+  alt="Ingenium Logo" 
+  className="h-10 w-10 sm:h-12 sm:w-12"
+/>
+
             <span className="hidden sm:inline text-2xl font-bold text-primary-500">
               The Ingenium Project
             </span>
