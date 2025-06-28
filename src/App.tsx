@@ -9,11 +9,12 @@ import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import Join from './pages/Join.tsx';
 import Sponsor from './pages/Sponsor.tsx';
+import Membership from './pages/Membership.tsx';
 
 const App: React.FC = () => {
   return (
     <Router>
-      <ScrollToTop /> {/* 👈 Add this here */}
+      <ScrollToTop /> 
       <div className="min-h-screen bg-dark-400 text-white">
         <Header />
         <Routes>
@@ -22,7 +23,8 @@ const App: React.FC = () => {
           <Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/join" element={<Join />} /> 
-          <Route path="/sponsor" element={<Sponsor />} />       
+          <Route path="/sponsor" element={<Sponsor />} />
+          <Route path="/membership" element={<Membership />} />       
           </Routes>
         <Footer />
       </div>
