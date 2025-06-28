@@ -90,7 +90,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="text-white font-semibold mb-2">Email</h3>
-                  <p className="text-gray-400">chadhavivaan007@gmail.com</p>
+                  <p className="text-gray-400">theingeniumproject.general@gmail.com</p>
                   <p className="text-sm text-gray-500 mt-1">Best for detailed project discussions and collaborations</p>
                 </div>
               </div>
