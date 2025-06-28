@@ -42,7 +42,7 @@ const Header: React.FC = () => {
           <img 
   src="/ingenium-logo.png" 
   alt="Ingenium Logo" 
-  className="h-10 w-10 sm:h-12 sm:w-12"
+  className="h-15 w-15 sm:h-12 sm:w-12"
 />
 
             <span className="hidden sm:inline text-2xl font-bold text-primary-500">
