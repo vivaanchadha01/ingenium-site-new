@@ -7,6 +7,7 @@ const Home: React.FC = () => {
   const currentFunding = 0; // Current amount raised
   const fundingGoal = 50000; // Goal amount
   const progressPercentage = (currentFunding / fundingGoal) * 100;
+  const backers = 0;
 
   return (
     <main>
@@ -73,7 +74,7 @@ const Home: React.FC = () => {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
               </Link>
               <Link 
-                to="/join"
+                to="/membership"
                 className="group border border-primary-500 text-primary-500 px-8 py-4 rounded-full font-semibold hover:bg-primary-500/10 transition-all duration-300 flex items-center justify-center gap-2"
               >
                 <Users className="w-5 h-5" />

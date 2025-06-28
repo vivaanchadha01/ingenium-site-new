@@ -65,14 +65,6 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <Link 
-                  to="/join"
-                  className="text-gray-400 hover:text-primary-500 transition-colors duration-200"
-                >
-                  Join
-                </Link>
-              </li>
-              <li>
-                <Link 
                   to="/membership"
                   className="text-gray-400 hover:text-primary-500 transition-colors duration-200"
                 >
