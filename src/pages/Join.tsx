@@ -1,12 +1,5 @@
 import React, { useState } from 'react';
 import { Users, Zap, Target, Code, Wrench, Lightbulb, Send, CheckCircle, ArrowRight, Star } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
-
-const navigate = useNavigate();
-
-const goToContact = () => {
-  navigate('/contact');
-};
 
 const Join: React.FC = () => {
   const [formData, setFormData] = useState<{

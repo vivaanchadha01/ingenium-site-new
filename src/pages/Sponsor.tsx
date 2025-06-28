@@ -1,12 +1,5 @@
 import React, { useState } from 'react';
 import { Heart, Target, Users, Zap, CreditCard, Shield, Award, ArrowRight, CheckCircle, Star } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
-
-const navigate = useNavigate();
-
-const goToContact = () => {
-  navigate('/contact');
-};
 
 const Sponsor: React.FC = () => {
   const [selectedAmount, setSelectedAmount] = useState(5000);
