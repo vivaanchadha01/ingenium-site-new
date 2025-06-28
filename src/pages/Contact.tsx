@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {
-  Mail, Send, User, MessageSquare, Zap, MapPin, Clock
+  Mail, Zap, MapPin, Clock
 } from 'lucide-react';
 
 const Contact: React.FC = () => {
