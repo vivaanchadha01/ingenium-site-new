@@ -14,10 +14,10 @@ const Sponsor: React.FC = () => {
   });
 
   // Mock current funding data
-  const currentFunding = 12500;
-  const fundingGoal = 50000;
+  const currentFunding = 0; // Current amount raised
+  const fundingGoal = 50000; // Goal amount
   const progressPercentage = (currentFunding / fundingGoal) * 100;
-  const backers = 23;
+  const backers = 0;
 
   const predefinedAmounts = [1000, 2500, 5000, 10000, 25000];
 
@@ -117,19 +117,19 @@ const Sponsor: React.FC = () => {
                 <div className="w-full bg-dark-300 rounded-full h-4 mb-3">
                   <div 
                     className="bg-gradient-to-r from-primary-500 to-accent-400 h-4 rounded-full transition-all duration-1000 ease-out"
-                    style={{ width: `${progressPercentage}%` }}
+                    style={{ width: `${Math.max(progressPercentage, 2)}%` }}
                   ></div>
                 </div>
                 <div className="flex justify-between text-sm text-gray-400">
-                  <span>{progressPercentage.toFixed(1)}% funded</span>
-                  <span>{backers} backers</span>
+                  <span>{progressPercentage === 0 ? 'Just getting started!' : `${progressPercentage.toFixed(1)}% funded`}</span>
+                  <span>{backers} {backers === 1 ? 'backer' : 'backers'}</span>
                 </div>
               </div>
 
               <div className="grid grid-cols-3 gap-4 text-center">
                 <div>
                   <div className="text-2xl font-bold text-primary-500">₹{(fundingGoal - currentFunding).toLocaleString()}</div>
-                  <div className="text-xs text-gray-400">Remaining</div>
+                  <div className="text-xs text-gray-400">Needed</div>
                 </div>
                 <div>
                   <div className="text-2xl font-bold text-accent-400">{backers}</div>

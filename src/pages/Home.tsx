@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Home: React.FC = () => {
   // Mock progress data - in a real app, this would come from a backend
-  const currentFunding = 12500; // Current amount raised
+  const currentFunding = 0; // Current amount raised
   const fundingGoal = 50000; // Goal amount
   const progressPercentage = (currentFunding / fundingGoal) * 100;
 
@@ -54,11 +54,11 @@ const Home: React.FC = () => {
                 <div className="w-full bg-dark-300 rounded-full h-3 mb-2">
                   <div 
                     className="bg-gradient-to-r from-primary-500 to-accent-400 h-3 rounded-full transition-all duration-1000 ease-out"
-                    style={{ width: `${progressPercentage}%` }}
+                    style={{ width: `${Math.max(progressPercentage, 2)}%` }}
                   ></div>
                 </div>
                 <div className="text-xs text-gray-400 text-center">
-                  {progressPercentage.toFixed(1)}% funded
+                  {progressPercentage === 0 ? 'Just getting started!' : `${progressPercentage.toFixed(1)}% funded`}
                 </div>
               </div>
             </div>
