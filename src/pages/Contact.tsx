@@ -136,6 +136,8 @@ const Contact: React.FC = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <input type="text" name="name" placeholder="Your Name" required value={formData.name} onChange={handleChange} className="bg-dark-300 border border-gray-600 rounded-lg py-3 px-4 text-white w-full" />
                 <input type="email" name="email" placeholder="Email Address" required value={formData.email} onChange={handleChange} className="bg-dark-300 border border-gray-600 rounded-lg py-3 px-4 text-white w-full" />
+                <input type="text" name="subject" placeholder="Subject" required value={formData.subject} onChange={handleChange} className="bg-dark-300 border border-gray-600 rounded-lg py-3 px-4 text-white w-full"
+/>
               </div>
               <select name="collaborationType" value={formData.collaborationType} onChange={handleChange} className="bg-dark-300 border border-gray-600 rounded-lg py-3 px-4 text-white w-full">
                 <option value="general">General Inquiry</option>
