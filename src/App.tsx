@@ -7,7 +7,6 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
-import Join from './pages/Join.tsx';
 import Sponsor from './pages/Sponsor.tsx';
 import Membership from './pages/Membership.tsx';
 
