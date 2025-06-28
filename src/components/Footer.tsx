@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
             </p>
             <div className="flex items-center gap-2 text-gray-400">
               <Mail className="w-4 h-4" />
-              <span>theingeniumproject.general@gmail.com</span>
+              <span>chadhavivaan007@gmail.com</span>
             </div>
           </div>
 
@@ -53,6 +53,22 @@ const Footer: React.FC = () => {
                   className="text-gray-400 hover:text-primary-500 transition-colors duration-200"
                 >
                   Projects
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/sponsor"
+                  className="text-gray-400 hover:text-primary-500 transition-colors duration-200"
+                >
+                  Sponsor
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/join"
+                  className="text-gray-400 hover:text-primary-500 transition-colors duration-200"
+                >
+                  Join
                 </Link>
               </li>
               <li>

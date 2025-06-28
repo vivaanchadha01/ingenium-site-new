@@ -23,6 +23,8 @@ const Header: React.FC = () => {
     { path: '/', label: 'Home' },
     { path: '/about', label: 'About' },
     { path: '/projects', label: 'Projects' },
+    { path: '/sponsor', label: 'Sponsor' },
+    { path: '/join', label: 'Join' },
     { path: '/contact', label: 'Contact' },
   ];
 
@@ -36,20 +38,10 @@ const Header: React.FC = () => {
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          
-          {/* Logo + Title */}
-          <Link to="/" className="flex items-center space-x-2">
-          <img 
-  src="/ingenium-logo.png" 
-  alt="Ingenium Logo" 
-  className="h-40 w-40 sm:h-12 sm:w-12"
-/>
-
-            <span className="hidden sm:inline text-2xl font-bold text-primary-500">
-              The Ingenium Project
-            </span>
+          <Link to="/" className="text-2xl font-bold text-primary-500">
+            Ingenium
           </Link>
-
+          
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
             {navItems.map((item) => (

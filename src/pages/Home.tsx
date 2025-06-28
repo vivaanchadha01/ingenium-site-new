@@ -1,8 +1,13 @@
 import React from 'react';
-import { ArrowRight, Zap } from 'lucide-react';
+import { ArrowRight, Zap, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Home: React.FC = () => {
+  // Mock progress data - in a real app, this would come from a backend
+  const currentFunding = 12500; // Current amount raised
+  const fundingGoal = 50000; // Goal amount
+  const progressPercentage = (currentFunding / fundingGoal) * 100;
+
   return (
     <main>
       {/* Hero Section */}
@@ -37,6 +42,27 @@ const Home: React.FC = () => {
               Student-led engineering solutions tackling real-world challenges through innovative design and sustainable technology.
             </p>
 
+            {/* Funding Progress */}
+            <div className="max-w-md mx-auto mb-8 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+              <div className="bg-dark-200 rounded-lg p-4 border border-primary-500/20">
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-sm text-gray-400">Project Funding</span>
+                  <span className="text-sm text-primary-500 font-semibold">
+                    ₹{currentFunding.toLocaleString()} / ₹{fundingGoal.toLocaleString()}
+                  </span>
+                </div>
+                <div className="w-full bg-dark-300 rounded-full h-3 mb-2">
+                  <div 
+                    className="bg-gradient-to-r from-primary-500 to-accent-400 h-3 rounded-full transition-all duration-1000 ease-out"
+                    style={{ width: `${progressPercentage}%` }}
+                  ></div>
+                </div>
+                <div className="text-xs text-gray-400 text-center">
+                  {progressPercentage.toFixed(1)}% funded
+                </div>
+              </div>
+            </div>
+
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center opacity-0 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
               <Link 
@@ -47,10 +73,11 @@ const Home: React.FC = () => {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
               </Link>
               <Link 
-                to="/about"
-                className="border border-primary-500 text-primary-500 px-8 py-4 rounded-full font-semibold hover:bg-primary-500/10 transition-all duration-300"
+                to="/join"
+                className="group border border-primary-500 text-primary-500 px-8 py-4 rounded-full font-semibold hover:bg-primary-500/10 transition-all duration-300 flex items-center justify-center gap-2"
               >
-                Meet the Founder
+                <Users className="w-5 h-5" />
+                Join the Team
               </Link>
             </div>
 
