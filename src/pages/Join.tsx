@@ -1,5 +1,12 @@
 import React, { useState } from 'react';
 import { Users, Zap, Target, Code, Wrench, Lightbulb, Send, CheckCircle, ArrowRight, Star } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+
+const navigate = useNavigate();
+
+const goToContact = () => {
+  navigate('/contact');
+};
 
 const Join: React.FC = () => {
   const [formData, setFormData] = useState<{
@@ -66,7 +73,7 @@ const Join: React.FC = () => {
       `Interest Areas: ${formData.interests.join(', ')}\n`
     );
     
-    const mailtoLink = `mailto:chadhavivaan007@gmail.com?subject=${subject}&body=${body}`;
+    const mailtoLink = `mailto:theingeniumproject.general@gmail.com?subject=${subject}&body=${body}`;
     window.location.href = mailtoLink;
     
     setTimeout(() => {
@@ -490,12 +497,13 @@ const Join: React.FC = () => {
                 Apply Now
                 <ArrowRight className="w-5 h-5" />
               </button>
-              <a 
-                href="mailto:chadhavivaan007@gmail.com?subject=Questions about Joining The Ingenium Project"
-                className="border border-primary-500 text-primary-500 px-8 py-3 rounded-full font-semibold hover:bg-primary-500/10 transition-all duration-300"
-              >
-                Ask Questions
-              </a>
+              <button
+  onClick={() => navigate('/contact')}
+  className="border border-primary-500 text-primary-500 px-8 py-3 rounded-full font-semibold hover:bg-primary-500/10 transition-all duration-300"
+>
+  Ask Questions
+</button>
+
             </div>
           </div>
         </div>

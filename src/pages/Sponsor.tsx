@@ -1,5 +1,12 @@
 import React, { useState } from 'react';
 import { Heart, Target, Users, Zap, CreditCard, Shield, Award, ArrowRight, CheckCircle, Star } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+
+const navigate = useNavigate();
+
+const goToContact = () => {
+  navigate('/contact');
+};
 
 const Sponsor: React.FC = () => {
   const [selectedAmount, setSelectedAmount] = useState(5000);
@@ -369,12 +376,13 @@ const Sponsor: React.FC = () => {
                 Sponsor Now
                 <ArrowRight className="w-5 h-5" />
               </button>
-              <a 
-                href="mailto:chadhavivaan007@gmail.com?subject=Sponsorship Inquiry"
-                className="border border-primary-500 text-primary-500 px-8 py-3 rounded-full font-semibold hover:bg-primary-500/10 transition-all duration-300"
-              >
-                Contact Us
-              </a>
+              <button
+  onClick={() => navigate('/contact')}
+  className="border border-primary-500 text-primary-500 px-8 py-3 rounded-full font-semibold hover:bg-primary-500/10 transition-all duration-300"
+>
+  Contact Us
+</button>
+
             </div>
           </div>
         </div>
