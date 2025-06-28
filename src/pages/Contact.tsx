@@ -25,6 +25,7 @@ const Contact: React.FC = () => {
       {
         name: formData.name,
         email: formData.email,
+        subject: formData.subject,
         message: formData.message,
         collaborationType: formData.collaborationType
       },
