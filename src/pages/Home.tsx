@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Zap, Users } from 'lucide-react';
+import { ArrowRight, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Home: React.FC = () => {
@@ -23,10 +23,14 @@ const Home: React.FC = () => {
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center">
-            {/* Logo/Icon */}
+            {/* Logo */}
             <div className="mb-8 flex justify-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-primary-500 to-accent-400 rounded-full flex items-center justify-center animate-pulse-glow">
-                <Zap className="w-10 h-10 text-dark-400" />
+              <div className="animate-pulse-glow">
+                <img 
+                  src="/ingenium-logo.png" 
+                  alt="The Ingenium Project Logo" 
+                  className="h-24 w-auto"
+                />
               </div>
             </div>
 
@@ -135,7 +139,11 @@ const Home: React.FC = () => {
             <div className="bg-dark-200 rounded-xl p-6 hover:bg-dark-100 transition-all duration-300 hover:scale-105">
               <div className="text-primary-500 mb-4">
                 <div className="w-12 h-12 bg-primary-500/20 rounded-lg flex items-center justify-center">
-                  <Zap className="w-6 h-6" />
+                  <img 
+                    src="/ingenium-logo.png" 
+                    alt="Project Icon" 
+                    className="w-6 h-6"
+                  />
                 </div>
               </div>
               <h3 className="text-xl font-bold text-white mb-3">Urban Noise Mapping</h3>
@@ -148,7 +156,11 @@ const Home: React.FC = () => {
             <div className="bg-dark-200 rounded-xl p-6 hover:bg-dark-100 transition-all duration-300 hover:scale-105">
               <div className="text-primary-500 mb-4">
                 <div className="w-12 h-12 bg-primary-500/20 rounded-lg flex items-center justify-center">
-                  <Zap className="w-6 h-6" />
+                  <img 
+                    src="/ingenium-logo.png" 
+                    alt="Project Icon" 
+                    className="w-6 h-6"
+                  />
                 </div>
               </div>
               <h3 className="text-xl font-bold text-white mb-3">Smart AQI Display</h3>
@@ -161,7 +173,11 @@ const Home: React.FC = () => {
             <div className="bg-dark-200 rounded-xl p-6 hover:bg-dark-100 transition-all duration-300 hover:scale-105">
               <div className="text-primary-500 mb-4">
                 <div className="w-12 h-12 bg-primary-500/20 rounded-lg flex items-center justify-center">
-                  <Zap className="w-6 h-6" />
+                  <img 
+                    src="/ingenium-logo.png" 
+                    alt="Project Icon" 
+                    className="w-6 h-6"
+                  />
                 </div>
               </div>
               <h3 className="text-xl font-bold text-white mb-3">TLUD Cookstove</h3>

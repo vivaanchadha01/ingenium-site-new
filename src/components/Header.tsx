@@ -38,8 +38,15 @@ const Header: React.FC = () => {
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <Link to="/" className="text-2xl font-bold text-primary-500">
-            The Ingenium Project
+          <Link to="/" className="flex items-center gap-3 group">
+            <img 
+              src="/ingenium-logo.png" 
+              alt="The Ingenium Project Logo" 
+              className="h-10 w-auto transition-transform duration-300 group-hover:scale-105"
+            />
+            <span className="text-xl font-bold text-primary-500 hidden sm:block">
+              The Ingenium Project
+            </span>
           </Link>
           
           {/* Desktop Navigation */}

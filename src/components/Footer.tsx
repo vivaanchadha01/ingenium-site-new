@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Zap } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
@@ -12,9 +12,11 @@ const Footer: React.FC = () => {
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-accent-400 rounded-lg flex items-center justify-center">
-                <Zap className="w-6 h-6 text-dark-400" />
-              </div>
+              <img 
+                src="/ingenium-logo.png" 
+                alt="The Ingenium Project Logo" 
+                className="h-10 w-auto"
+              />
               <span className="text-2xl font-bold text-primary-500">The Ingenium Project</span>
             </div>
             <p className="text-gray-400 mb-6 max-w-md">
